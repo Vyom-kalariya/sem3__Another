@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Customization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="some.css">
+    <script src="functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Car Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showSection('engine-section')">Select Engine</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('body-type')">Select Body</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('racing-section')">Racing Lobby</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('showroom-section')">Car Showroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PProject.html" >- PRO MODE -</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center mt-5">
+        
+        <section id="showroom-section">
+            <h1 class="mb-4"> - - - Car Showroom - - - </h1>
+            <div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <video autoplay muted id="intro-video">
+                            <source src="intro_car1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_red.png" class="d-block w-100" alt="Car 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_blue.png" class="d-block w-100" alt="Car 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_green.png" class="d-block w-100" alt="Car 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_yellow.png" class="d-block w-100" alt="Car 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_black.png" class="d-block w-100" alt="Car 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_white.png" class="d-block w-100" alt="Car 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_orange.png" class="d-block w-100" alt="Car 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="C:/Users/vyom2/Downloads/GROUP FSD PROJECETNew folder/cars/car_purple.png" class="d-block w-100" alt="Car 9">
+                    </div>
+                    </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <h3 id="showroom-status" class="mt-4"></h3>
+        </section>
+        <section id="engine-section" >
+            <h1 class="mb-4">Select Engine</h1>
+            <div class="row">
+                <!-- Engine Buttons (V1 to V12) -->
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V1'); playSound()">V1</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V2'); playSound()">V2</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V3'); playSound()">V3</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V4'); playSound()">V4</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V5'); playSound()">V5</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V6'); playSound()">V6</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V7'); playSound()">V7</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V8'); playSound()">V8</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V9'); playSound()">V9</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V10'); playSound()">V10</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V11'); playSound()">V11</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn engine btn-primary w-100" onclick="selectEngine('V12'); playSound()">V12</button>
+                </div>
+            </div>
+            <h3 id="selected-engine" class="mt-4">Selected Engine: None</h3>
+        </section>
+        <section id="body-type" >
+            <h1 class="mb-4">Select Body</h1>
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn body btn-primary w-100" onclick="selectBody('Sporty'); bodys()">Sporty</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn body btn-primary w-100" onclick="selectBody('Luxury'); bodys()">Luxury</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn body btn-primary w-100" onclick="selectBody('Classic'); bodys()">Classic</button>
+                </div>
+            </div>
+        
+            <h3 id="selected-body" class="mt-4">Selected Body: None</h3>
+        </section>
+
+        <section id="body-color">
+            <h1 class="mb-4">Select Body Color</h1>
+            <div class="row">
+                <!-- First row of colors -->
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: red; color: white;" onclick="selectColor('Red'); colors()">Red</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: blue; color: white;" onclick="selectColor('Blue'); colors()">Blue</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: green; color: white;" onclick="selectColor('Green'); colors()">Green</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: yellow; color: black;" onclick="selectColor('Yellow'); colors()">Yellow</button>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Second row of colors -->
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: black; color: white;" onclick="selectColor('Black'); colors()">Black</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: white; color: black;" onclick="selectColor('White'); colors()">White</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: orange; color: white;" onclick="selectColor('Orange'); colors()">Orange</button>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <button class="btn w-100" style="background-color: purple; color: white;" onclick="selectColor('Purple'); colors()">Purple</button>
+                </div>
+            </div>
+            <!-- Selected Color -->
+            <h3 id="selected-color" class="mt-4">Selected Color: None</h3>
+        </section>
+        <section id="car-display">  <h1 class="mb-4">- - - - Your Car - - - -</h1>
+            <img id="car-image" src="car_base.png" alt="Your Car"></section>
+        <section id="racing-section">
+            <h1 class="mb-4">Racing Lobby</h1>
+        <a href="loader.html" target="_blank">
+            <button class="btn btn-primary" onclick="playSound()">Enter Racing Lobby</button>
+        </a>
+
+            <h3 id="racing-status" class="mt-4"></h3>
+        </section>
+        
+
+    </div>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #intro-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            let sound = new Audio("sound_at_intro.mp3");
+
+            // Check if the sound file is loaded properly
+            sound.oncanplaythrough = function () {
+                sound.play().catch(error => console.log("Audio play failed:", error));
+            };
+
+            // Ensure sound is played with user interaction if needed (browsers require it)
+            if (sound.paused) {
+                document.body.addEventListener('click', function() {
+                    sound.play().catch(error => console.log("Audio play failed:", error));
+                });
+            }
+
+            sound.onended = function () {
+                window.location.href = "racing_lobby.html";
+            };
+        };
+    </script>
+</head>
+<body>
+    <video autoplay muted loop id="intro-video">
+        <source src="mids_car.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

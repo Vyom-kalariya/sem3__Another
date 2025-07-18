@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Game Intro</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .btn-one {
+            color: #FFF;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-one span {
+            transition: all 0.3s;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .btn-one::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top: 1px solid rgba(246, 240, 240, 0.2);
+            border-bottom: 1px solid rgba(236, 231, 231, 0.2);
+            transform: scale(0.1, 1);
+        }
+
+        .btn-one:hover span {
+            letter-spacing: 2px;
+        }
+
+        .btn-one:hover::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        .btn-one::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.3s;
+            border-top: 1px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+            background-color: rgba(252, 243, 243, 0.05);
+        }
+
+        .btn-one:hover::after {
+            opacity: 0;
+            transform: scale(0.1, 1);
+        }
+
+        .intro-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            border: none;
+            padding: 0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #intro-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted id="intro-video">
+            <source src="intro_car1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button class="intro-button btn-one" id="start-button"><span>Start Game</span></button>
+    </div>
+
+    <script>
+        let startButton = document.getElementById("start-button");
+        let video = document.getElementById("intro-video");
+        let sound = new Audio("sound_at_intro.mp3");
+
+        startButton.addEventListener('click', () => {
+            video.play().then(() => {
+                sound.play().catch(error => console.error("Audio play failed:", error.message, error));
+                startButton.style.display = 'none'; // Hide the button
+            }).catch(error => {
+                console.error("Video play failed:", error.message, error);
+            });
+        }, {once: true});
+
+        video.onended = function () {
+            window.location.href = "login.html";
+        };
+
+        // Optional: Loading indicators
+        video.addEventListener('loadeddata', () => {
+            console.log("Video loaded"); // Or display a message/spinner
+        });
+
+        sound.addEventListener('loadeddata', () => {
+            console.log("Sound loaded"); // Or update loading status
+        });
+
+    </script>
+</body>
+</html>
